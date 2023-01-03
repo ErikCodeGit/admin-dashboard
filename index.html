@@ -1,17 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="container">
-    <div id="sidebar"></div>
-    <div id="header"></div>
-    <div id="main"></div>
-  </div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="sidebar"></div>
+      <div id="header">
+        <div class="navbar">
+          <form action="">
+            <input type="image" id="search-icon" src="images/magnify.svg">
+            <input type="search" name="search-text" id="searchbar">
+          </form>
+        </div>
+        <div class="profile">
+          <a href="">
+            <img id="notification-picture" src="images/bell-outline.svg" alt="notifications">
+          </a>
+          <div class="profile-picture-wrapper small">
+            <a href="">
+              <img id="profile-picture" src="images/fat yoshi sans.png" alt="profile">
+            </a>
+          </div>
+          <p class="username">Fat Yoshi</p>
+        </div>
+        <div class="welcome">
+          <div id="profile-picture"></div>
+          <p class="greeting">Hi there,</p>
+          <p class="username">Fat Yoshi (@yoshi)</p>
+        </div>
+        <div class="actions">
+          <button class="new-button">New</button>
+          <button class="upload-button">Upload</button>
+          <button class="share-button">Share</button>
+        </div>
+      </div>
+      <div id="main"></div>
+    </div>
+  </body>
 </html>

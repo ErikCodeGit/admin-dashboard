@@ -1,5 +1,5 @@
-* {
-  border: 1px solid red;
+:root {
+  --background-color: rgb(213, 220, 223);
 }
 
 body,
@@ -7,6 +7,8 @@ html {
   height: 100vh;
   margin: 0;
   padding: 0;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 div.container {
@@ -20,6 +22,59 @@ div.container {
   background-color: cornflowerblue;
 }
 
+#header {
+  display: grid;
+  grid-template: auto auto / 2fr 1fr;
+  padding: 0 50px;
+  align-items: center;
+}
+
+.navbar form {
+  display: grid;
+  grid-template-columns: 1.5rem 1fr;
+  gap: 1rem;
+  align-items: center;
+}
+
+#search-icon {
+  height: 1.5rem;
+  margin-bottom: -2px;
+}
+
+.navbar form input[type="search"] {
+  height: 1.8rem;
+  border-radius: 1rem;
+  background-color: var(--background-color);
+  border: none;
+  padding: 0 0.8rem;
+  font-size: 1rem;
+}
+
+.profile {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile .profile-picture-wrapper {
+  background-color: rgb(255, 208, 0);
+  height: 3rem;
+  width: 3rem;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+#notification-picture {
+  height: 2rem;
+}
+
+#profile-picture {
+  height: 3rem;
+}
+
 #main {
-  background-color: rgb(213, 220, 223);
+  background-color: var(--background-color);
 }
