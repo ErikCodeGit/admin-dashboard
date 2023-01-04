@@ -1,11 +1,9 @@
-
 @font-face {
-  font-family: 'Roboto';
-  src: url('fonts/roboto-regular-webfont.woff2') format('woff2'),
-       url('fonts/roboto-regular-webfont.woff') format('woff');
+  font-family: "Roboto";
+  src: url("fonts/roboto-regular-webfont.woff2") format("woff2"),
+    url("fonts/roboto-regular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
-
 }
 
 :root {
@@ -18,6 +16,15 @@ html {
   margin: 0;
   padding: 0;
   font-family: "Roboto";
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button:hover {
+  box-shadow: 3px 3px 3px lightgray;
 }
 
 .container {
@@ -39,6 +46,7 @@ html {
   font-size: 1.2rem;
   align-items: center;
   gap: 10px;
+  margin-right: 2rem;
 }
 
 .sidebar-header svg {
@@ -113,6 +121,14 @@ html {
   gap: 30px;
 }
 
+#header a {
+  width: max-content;
+  display: grid;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
 .profile-picture-wrapper {
   background-color: rgb(255, 208, 0);
   display: grid;
@@ -121,7 +137,7 @@ html {
   border-radius: 50%;
 }
 
-.profile .profile-picture-wrapper {
+div.small {
   height: 3rem;
   width: 3rem;
 }
@@ -158,7 +174,7 @@ p.username {
   width: 4rem;
 }
 
-.welcome .greeting-wrapper p{
+.welcome .greeting-wrapper p {
   margin: 0;
   font-weight: 600;
   font-size: 0.8rem;
@@ -183,8 +199,156 @@ p.username {
   border-radius: 1.5rem;
   font-weight: 900;
   font-size: 0.9rem;
+  cursor: pointer;
 }
 
 #main {
   background-color: var(--background-color);
+  display: grid;
+
+  grid-template: auto auto / 1fr 300px;
+  padding: 1.5rem 1.5rem 5rem;
+  gap: 1.5rem;
 }
+
+#main h2 {
+  margin: 0 0 0.8rem;
+}
+
+.announcements {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+
+.projects {
+  grid-row: 1 / -1;
+}
+
+.project-container {
+  height: 100%;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, 400px);
+  grid-auto-rows: 250px;
+}
+
+.announcement-container,
+.trend-container,
+.card {
+  background-color: white;
+  border-radius: 10px;
+}
+
+.announcement-container,
+.trend-container {
+  height: 400px;
+  margin-bottom: 2rem;
+}
+
+.card {
+  border-left: 10px solid rgb(240, 184, 0);
+  padding: 40px 20px;
+  display: grid;
+}
+
+.card h3 {
+  margin: 0 0 0.2rem;
+}
+
+.card p {
+  color: gray;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.card div.project-actions {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 30px;
+  padding: 0 10px;
+}
+
+.card div.project-actions > button {
+  background-color: inherit;
+  border: none;
+  width: 24px;
+  height: 24px;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.card div.project-actions .favorite-button {
+  background-image: url("images/star.svg");
+}
+
+.card div.project-actions .watchlist-button {
+  background-image: url("images/eye.svg");
+}
+
+.card div.project-actions .share-button {
+  background-image: url("images/share.svg");
+}
+
+.announcement-container {
+  display: grid;
+  padding: 25px 35px;
+  grid-template-rows: repeat(5, auto);
+  align-items: center;
+}
+
+.announcement h3 {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.announcement p {
+  margin: 0;
+  color: gray;
+  font-size: 0.87rem;
+}
+
+.announcement-container hr {
+  margin: 0 -10px;
+  border: 1px solid lightgray;
+}
+
+.trending {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.trend-container {
+  padding: 10px 25px;
+  display: grid;
+  grid-auto-rows: 1fr;
+  align-items: center;
+  height: 140%;
+} 
+
+.trending-project .profile-picture{
+  height: 3rem;
+  width: 3rem;
+}
+
+.trending-project {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 20px;
+  height: max-content;
+}
+
+.trending-project p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.trending-project p.project-name {
+  color: gray;
+}
+
+.trending-project .info {
+  height: max-content;
+}
+
