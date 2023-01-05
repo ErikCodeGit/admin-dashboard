@@ -26,12 +26,6 @@ a {
 
 .actions button:hover {
   background-color: rgb(98, 171, 255);
-  text-decoration: underline;
-}
-
-.actions button:active {
-  background-color: var(--secondary-color);
-  box-shadow: 0 0 10px gray;
 }
 
 .container {
@@ -117,6 +111,10 @@ a {
   border: none;
   padding: 0 0.8rem;
   font-size: 1rem;
+}
+
+.navbar form input[type="search"]:hover {
+  border: 2px solid gray;
 }
 
 .profile {
