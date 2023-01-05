@@ -8,6 +8,7 @@
 
 :root {
   --background-color: rgb(213, 220, 223);
+  --secondary-color: rgb(62, 145, 240);
 }
 
 body,
@@ -23,8 +24,14 @@ a {
   color: inherit;
 }
 
-button:hover {
-  box-shadow: 3px 3px 3px lightgray;
+.actions button:hover {
+  background-color: rgb(98, 171, 255);
+  text-decoration: underline;
+}
+
+.actions button:active {
+  background-color: var(--secondary-color);
+  box-shadow: 0 0 10px gray;
 }
 
 .container {
@@ -39,7 +46,7 @@ button:hover {
   color: white;
 }
 
-.sidebar-header a{
+.sidebar-header a {
   display: grid;
   grid-template-columns: auto 1fr;
   padding: 25px;
@@ -73,10 +80,14 @@ button:hover {
   text-decoration: none;
   color: white;
   display: grid;
-  grid-template-columns: 50px min-content;
+  grid-template-columns: 50px max-content;
   font-size: 1.4rem;
   font-weight: bold;
   align-items: center;
+}
+
+#sidebar a:hover {
+  text-decoration: underline;
 }
 
 #header {
@@ -160,6 +171,10 @@ p.username {
   font-size: 1.3rem;
 }
 
+a:hover > p.username {
+  text-decoration: underline;
+}
+
 .welcome {
   display: grid;
   grid-template-columns: 4rem 1fr;
@@ -190,7 +205,7 @@ p.username {
 }
 
 .actions button {
-  background-color: rgb(73, 160, 247);
+  background-color: var(--secondary-color);
   border: none;
   color: white;
   padding: 0.7rem 0;
@@ -217,7 +232,6 @@ p.username {
   grid-template-rows: auto 1fr;
 }
 
-
 .projects {
   grid-row: 1 / -1;
 }
@@ -237,8 +251,7 @@ p.username {
   border-radius: 10px;
 }
 
-.announcement-container,
-.trend-container {
+.announcement-container {
   height: 400px;
   margin-bottom: 2rem;
 }
@@ -252,6 +265,11 @@ p.username {
 
 .card h3 {
   margin: 0 0 0.2rem;
+}
+
+.card a:hover h3 {
+  text-decoration: underline;
+  color: var(--secondary-color);
 }
 
 .card p {
@@ -271,10 +289,15 @@ p.username {
 .card div.project-actions > button {
   background-color: inherit;
   border: none;
-  width: 24px;
-  height: 24px;
+  width: 30px;
+  height: 30px;
   background-size: cover;
   cursor: pointer;
+  border-radius: 30%;
+}
+
+.card div.project-actions > button:hover {
+  box-shadow: 0px 0px 10px gray;
 }
 
 .card div.project-actions .favorite-button {
@@ -296,6 +319,11 @@ p.username {
   align-items: center;
 }
 
+.announcement-container a:hover h3 {
+  text-decoration: underline;
+  color: var(--secondary-color);
+}
+
 .announcement h3 {
   margin: 0;
   font-size: 0.95rem;
@@ -314,18 +342,26 @@ p.username {
 
 .trending {
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto auto;
 }
 
 .trend-container {
-  padding: 10px 25px;
   display: grid;
-  grid-auto-rows: 1fr;
+  grid-auto-rows: min-content;
   align-items: center;
-  height: 140%;
-} 
+  padding: 10px 0;
+  gap: 10px;
+}
 
-.trending-project .profile-picture{
+.trend-container a {
+  padding: 10px 0;
+}
+
+.trend-container a:hover {
+  background-color: rgba(240, 240, 240, 0.5);
+}
+
+.trending-project .profile-picture {
   height: 3rem;
   width: 3rem;
 }
@@ -335,6 +371,7 @@ p.username {
   grid-template-columns: auto 1fr;
   gap: 20px;
   height: max-content;
+  margin: 0 25px;
 }
 
 .trending-project p {
@@ -349,4 +386,3 @@ p.username {
 .trending-project .info {
   height: max-content;
 }
-
